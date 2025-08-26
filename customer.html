@@ -1,18 +1,3 @@
-<?php
-session_start();
-require 'db.php'; // Your PDO connection
-
-// Check login
-if (!isset($_SESSION['user_id'])) {
-    header("Location: login.html");
-    exit();
-}
-
-// Fetch customers
-$stmt = $pdo->prepare("SELECT id, name, email, phone, created_at FROM customers ORDER BY created_at DESC");
-$stmt->execute();
-$customers = $stmt->fetchAll(PDO::FETCH_ASSOC);
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
