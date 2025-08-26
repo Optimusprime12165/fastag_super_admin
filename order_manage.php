@@ -39,8 +39,7 @@ $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <body>
   <div class="sidebar">
     <div class="logo"><i class="fa fa-id-card"></i> Fastag Admin</div>
-    <a href="dashboard.html"><i class="fa fa-home"></i> Dashboard</a>
-    <a href="order_manage.php" class="active"><i class="fa fa-receipt"></i> Fastag Orders</a>
+    <a href="index.html"><i class="fa fa-home"></i> Dashboard</a>
     <a href="products.html"><i class="fa fa-car"></i> Vehicle Categories</a>
     <a href="banks.html"><i class="fa fa-university"></i> Bank Partners</a>
     <a href="customer.php"><i class="fa fa-users"></i> Customers</a>
