@@ -37,15 +37,15 @@ $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
   </style>
 </head>
 <body>
-  <div class="sidebar">
-    <div class="logo"><i class="fa fa-id-card"></i> Fastag Admin</div>
-    <a href="index.html"><i class="fa fa-home"></i> Dashboard</a>
-    <a href="products.html"><i class="fa fa-car"></i> Vehicle Categories</a>
-    <a href="banks.html"><i class="fa fa-university"></i> Bank Partners</a>
-    <a href="customer.php"><i class="fa fa-users"></i> Customers</a>
-    <a href="admins.html"><i class="fa fa-user-shield"></i> Admin role</a>
-    <a href="statistics.php"><i class="fa fa-chart-line"></i> Reports</a>
-  </div>
+  <div class="menu">
+      <a href="index.html" class="active"><i class="fa fa-home"></i> Dashboard</a>
+      <a href="order_manage.php"><i class="fa fa-receipt"></i> Fastag Orders</a>
+      <a href="products.html"><i class="fa fa-car"></i> Vehicle Categories</a>
+      <a href="banks.html"><i class="fa fa-university"></i> Bank Partners</a>
+      <a href="customer.php"><i class="fa fa-users"></i> Customers</a>
+      <a href="admin.html"><i class="fa fa-user-shield"></i> Admin role</a>
+      <a href="reports.html"><i class="fa fa-chart-line"></i> Reports</a>
+    </div>
   <div class="content">
     <h1>All Fastag Orders</h1>
     <table>
