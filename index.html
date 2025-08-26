@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fastag Admin Portal</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      display: flex;
+      background: #f7f8fc;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 230px;
+      background: #fff;
+      height: 100vh;
+      border-right: 1px solid #ddd;
+      padding: 20px 15px;
+    }
+    .logo {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .profile {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+    .profile-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #6c63ff;
+      color: #fff;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 10px;
+    }
+    .profile-info {
+      font-size: 14px;
+    }
+    .profile-info strong {
+      display: block;
+    }
+    .menu a {
+      display: block;
+      padding: 12px;
+      text-decoration: none;
+      color: #333;
+      border-radius: 6px;
+      margin-bottom: 8px;
+      transition: background 0.2s;
+    }
+    .menu a:hover, .menu a.active {
+      background: #f0f0f5;
+      font-weight: bold;
+    }
+
+    /* Main */
+    .main {
+      flex: 1;
+      padding: 20px;
+    }
+    .header {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-bottom: 20px;
+      gap: 20px;
+    }
+    .header i {
+      font-size: 18px;
+      color: #444;
+      cursor: pointer;
+    }
+
+    /* Dashboard cards */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      position: relative;
+    }
+    .card .icon {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 20px;
+      padding: 10px;
+      border-radius: 8px;
+      color: #fff;
+    }
+    .card h4 {
+      font-size: 14px;
+      color: #444;
+      margin-bottom: 5px;
+    }
+    .card .value {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .card .change {
+      font-size: 12px;
+    }
+    .card .change.up { color: green; }
+    .card .change.down { color: red; }
+
+    /* Content grid */
+    .content {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 20px;
+    }
+    .table-box, .categories-box {
+      background: #fff;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .table-box h4, .categories-box h4 {
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+    .table-box table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    .table-box th, .table-box td {
+      padding: 10px;
+      border-bottom: 1px solid #eee;
+      text-align: left;
+    }
+    .view-all {
+      float: right;
+      font-size: 12px;
+      color: #6c63ff;
+      cursor: pointer;
+    }
+
+    /* Icon background colors */
+    .bg-blue { background: #6c63ff; }
+    .bg-yellow { background: #ffb300; }
+    .bg-green { background: #28a745; }
+    .bg-purple { background: #9c27b0; }
+
+    /* Logout */
+    .logout {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background: #f44336;
+      color: #fff;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="logo"><i class="fa-solid fa-tag"></i> Fastag Admin</div>
+    <div class="profile">
+      <div class="profile-avatar">AD</div>
+      <div class="profile-info">
+        <strong>Ankit Sharma</strong>
+        <span>Super Admin</span>
+      </div>
+    </div>
+    <div class="menu">
+      <a href="#" class="active"><i class="fa fa-home"></i> Dashboard</a>
+      <a href="#"><i class="fa fa-receipt"></i> Fastag Orders</a>
+      <a href="#"><i class="fa fa-truck"></i> Vehicle Categories</a>
+      <a href="#"><i class="fa fa-university"></i> Bank Partners</a>
+      <a href="#"><i class="fa fa-users"></i> Customers</a>
+      <a href="#"><i class="fa fa-user-shield"></i> Admin role</a>
+      <a href="#"><i class="fa fa-chart-line"></i> Reports</a>
+    </div>
+    <button class="logout">Logout</button>
+  </div>
+
+  <!-- Main -->
+  <div class="main">
+    <div class="header">
+      <i class="fa fa-bell"></i>
+      <i class="fa fa-envelope"></i>
+    </div>
+
+    <h2>Admin Dashboard</h2>
+
+    <div class="cards">
+      <div class="card">
+        <div class="icon bg-blue"><i class="fa fa-lock"></i></div>
+        <h4>Total Orders</h4>
+        <div class="value">0</div>
+        <div class="change up">↑ 0% from last month</div>
+      </div>
+      <div class="card">
+        <div class="icon bg-yellow"><i class="fa fa-clock"></i></div>
+        <h4>Approval Pending</h4>
+        <div class="value">0</div>
+        <div class="change down">↓ 0% from last month</div>
+      </div>
+      <div class="card">
+        <div class="icon bg-green"><i class="fa fa-users"></i></div>
+        <h4>Active Users</h4>
+        <div class="value">0</div>
+        <div class="change up">↑ 0% from last month</div>
+      </div>
+      <div class="card">
+        <div class="icon bg-purple"><i class="fa fa-indian-rupee-sign"></i></div>
+        <h4>Revenue</h4>
+        <div class="value">₹0</div>
+        <div class="change up">↑ 0% from last month</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="table-box">
+        <h4>Recent Orders <span class="view-all">View All</span></h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Vehicle</th>
+              <th>Bank</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td colspan="5">Loading orders...</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="categories-box">
+        <h4>Vehicle Categories</h4>
+        <p>Loading categories...</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
